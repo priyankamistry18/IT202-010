@@ -138,7 +138,7 @@
         // Create a rectangle object - for paddles, ball, etc
         function makeRect(x, y, width, height, speed, color) {
             if (!color)
-                color = '# ';
+                color = '# 000000';
             return {
                 x: x,
                 y: y,
@@ -211,16 +211,34 @@
                 }
             }
         }
-        function checkScore() {
-            // Score if the ball goes past a paddle
-            if (ball.x < leftPaddle.x) {
-                rightScore++;
-                resetBall();
-                ball.sX *= -1;
-            } else if (ball.x + ball.w > rightPaddle.x + rightPaddle.w) {
-                leftScore++;
-                resetBall();
-                ball.sX *= -1;
+function checkScore() {
+    // Score if the ball goes past a paddle
+    if(rightScore > 5){
+        leftPaddle.h = 45;
+    }
+    if(rightScore > 10){
+        leftPaddle.h = 45;
+    }
+    if(rightScore > 15){
+        leftPaddle.h = 45;
+    }
+    if(leftScore > 5){
+        rightPaddle.h = 80;
+    }
+    if(leftScore > 10){
+        rightPaddle.h = 75;
+    }
+    if(leftScore > 15){
+        rightPaddle.h = 60;
+    }
+    if (ball.x < leftPaddle.x) {
+        rightScore++;
+        resetBall();
+        ball.sX *= -1;
+    } else if (ball.x + ball.w > rightPaddle.x + rightPaddle.w) {
+        leftScore++;
+        resetBall();
+        ball.sX *= -1;
             }
         }
         function drawScores() {
