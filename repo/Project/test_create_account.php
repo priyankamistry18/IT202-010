@@ -15,6 +15,7 @@
     <option value = "checking">checking</option>
     <option value =  "saving">saving</option>
     <option value = "loan">loan</option>
+
    
   </select>
   <label>Balance</label>
@@ -49,4 +50,3 @@ if(isset($_POST["save"])){
 }   
 
 ?> 
-<?php require(__DIR__ . "/partials/flash.php");

@@ -56,10 +56,3 @@ if(isset($id)){
 		<option value="checking" <?php echo ($result["account_type"] == "0"?'selected="selected"':'');?>>checking</option>
                 <option value="saving" <?php echo ($result["account_type"] == "2"?'selected="selected"':'');?>>saving</option>
                 <option value="loan" <?php echo ($result["account_type"] == "3"?'selected="selected"':'');?>>loan</option>
-            
-	</select>
-  <label>Balance</label> 
-  <input type="number" min="10.00" name="balance" value="<?php echo $result["balance"];?>" />
-  <input type="submit" name="save" value="Update"/>
-</form>
-<?php require(__DIR__ . "/partials/flash.php");
