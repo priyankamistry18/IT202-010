@@ -15,9 +15,10 @@
     <option value = "checking">checking</option>
     <option value =  "saving">saving</option>
     <option value = "loan">loan</option>
-
+    <option value = "world">world</option>
    
-  </select>
+ 
+ </select>
   <label>Balance</label>
   <input type="number" min="10.00" name="balance" value="<?php echo $result["balance"];?>" />
 	<input type="submit" name="save" value="Create"/>
@@ -50,3 +51,4 @@ if(isset($_POST["save"])){
 }   
 
 ?> 
+<?php require(__DIR__ . "/partials/flash.php");
